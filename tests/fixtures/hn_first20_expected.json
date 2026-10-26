@@ -1,0 +1,22 @@
+{
+  "21936441": {"remote_policy":"remote","country":[],"seniority":["experienced_unspecified"],"salary":[],"required_skills":["React","AWS"]},
+  "21936462": {"unavailable":true},
+  "21936475": {"remote_policy":"mixed","country":["Germany"],"seniority":["senior"],"salary":[],"required_skills":["Clojure"]},
+  "21936486": {"remote_policy":"onsite","country":[],"seniority":["manager"],"salary":[],"required_skills":["Scala","Docker","Terraform"]},
+  "21936492": {"remote_policy":"mixed","country":["Canada"],"seniority":[],"salary":[],"required_skills":["C#","Terraform"]},
+  "21936534": {"unavailable":true},
+  "21936536": {"remote_policy":"remote","country":["United States","Canada"],"seniority":["experienced_unspecified"],"salary":[],"required_skills":["Python","Kubernetes"]},
+  "21936542": {"remote_policy":"onsite","country":[],"seniority":["senior"],"salary":[],"required_skills":["Rust","React","Kubernetes"]},
+  "21936550": {"remote_policy":"onsite","country":[],"seniority":["head","intern","student"],"salary":[],"required_skills":["TypeScript","Ionic"]},
+  "21936558": {"remote_policy":"onsite","country":[],"seniority":["manager","director"],"salary":[],"required_skills":[]},
+  "21936562": {"remote_policy":"onsite","country":["United States"],"seniority":[],"salary":[],"required_skills":["C++","Python","Qt","CMake"]},
+  "21936576": {"remote_policy":"onsite","country":[],"seniority":["manager","chief"],"salary":[],"required_skills":["C","bash","Linux"]},
+  "21936580": {"remote_policy":"onsite","country":["United States"],"seniority":[],"salary":[{"minimum":100000,"maximum":140000,"currency":null,"period":"not_stated"}],"required_skills":["pandas","Linux"]},
+  "21936589": {"remote_policy":"remote","country":["United States"],"seniority":["junior","senior"],"salary":[],"required_skills":["Ansible","Terraform","Linux"]},
+  "21936593": {"remote_policy":"onsite","country":[],"seniority":[],"salary":[],"required_skills":["Python","React","Docker","GKE","Helm","Terraform","BigQuery","Elasticsearch"]},
+  "21936643": {"remote_policy":"onsite","country":[],"seniority":["senior"],"salary":[],"required_skills":["JavaScript","Git","Unix"]},
+  "21936650": {"remote_policy":"onsite","country":["Ireland"],"seniority":[],"salary":[{"minimum":60000,"maximum":90000,"currency":"EUR","period":"not_stated"}],"required_skills":[]},
+  "21936653": {"remote_policy":"onsite","country":["Germany"],"seniority":[],"salary":[],"required_skills":["GraphQL","React"]},
+  "21936684": {"remote_policy":"mixed","country":[],"seniority":["manager"],"salary":[],"required_skills":["JavaScript"]},
+  "21936686": {"remote_policy":"onsite","country":[],"seniority":["intern","manager"],"salary":[],"required_skills":["Java","React"]}
+}
