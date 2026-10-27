@@ -771,6 +771,18 @@
       "source_location": "L72"
     },
     {
+      "id": "api_app_health",
+      "label": "health()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "app.py",
+      "file_type": "code",
+      "norm_label": "health()",
+      "source_file": "api/app.py",
+      "source_location": "L103"
+    },
+    {
       "id": "api_app_list_profiles",
       "label": "list_profiles()",
       "_callable": true,
@@ -879,24 +891,12 @@
       "source_location": "L65"
     },
     {
-      "id": "api_app_health",
-      "label": "health()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "ingest_hn.py",
-      "file_type": "code",
-      "norm_label": "health()",
-      "source_file": "api/app.py",
-      "source_location": "L103"
-    },
-    {
       "id": "api_app_whoami",
       "label": "whoami()",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
-      "community_name": "ingest_hn.py",
+      "community": 3,
+      "community_name": "app.py",
       "file_type": "code",
       "norm_label": "whoami()",
       "source_file": "api/app.py",
@@ -1365,6 +1365,116 @@
       "source_location": "L16"
     },
     {
+      "id": "frontend_package_devdependencies",
+      "label": "devDependencies",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "devdependencies",
+      "source_file": "frontend/package.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "frontend_package_devdependencies_oxlint",
+      "label": "oxlint",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "oxlint",
+      "source_file": "frontend/package.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "frontend_package_devdependencies_tailwindcss",
+      "label": "tailwindcss",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "tailwindcss",
+      "source_file": "frontend/package.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "frontend_package_devdependencies_tailwindcss_vite",
+      "label": "@tailwindcss/vite",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "@tailwindcss/vite",
+      "source_file": "frontend/package.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "frontend_package_devdependencies_types_node",
+      "label": "@types/node",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "@types/node",
+      "source_file": "frontend/package.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "frontend_package_devdependencies_types_react",
+      "label": "@types/react",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "@types/react",
+      "source_file": "frontend/package.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "frontend_package_devdependencies_types_react_dom",
+      "label": "@types/react-dom",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "@types/react-dom",
+      "source_file": "frontend/package.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "frontend_package_devdependencies_typescript",
+      "label": "typescript",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "typescript",
+      "source_file": "frontend/package.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "frontend_package_devdependencies_vite",
+      "label": "vite",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "vite",
+      "source_file": "frontend/package.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "frontend_package_devdependencies_vitejs_plugin_react",
+      "label": "@vitejs/plugin-react",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "@vitejs/plugin-react",
+      "source_file": "frontend/package.json",
+      "source_location": "L23"
+    },
+    {
       "id": "frontend_package_name",
       "label": "name",
       "_origin": "ast",
@@ -1602,116 +1712,6 @@
       "community": 1,
       "community_name": "package.json",
       "file_type": "concept",
-      "norm_label": "@vitejs/plugin-react",
-      "source_file": "frontend/package.json",
-      "source_location": "L23"
-    },
-    {
-      "id": "frontend_package_devdependencies",
-      "label": "devDependencies",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "devDependencies",
-      "file_type": "code",
-      "norm_label": "devdependencies",
-      "source_file": "frontend/package.json",
-      "source_location": "L18"
-    },
-    {
-      "id": "frontend_package_devdependencies_oxlint",
-      "label": "oxlint",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "devDependencies",
-      "file_type": "code",
-      "norm_label": "oxlint",
-      "source_file": "frontend/package.json",
-      "source_location": "L24"
-    },
-    {
-      "id": "frontend_package_devdependencies_tailwindcss",
-      "label": "tailwindcss",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "devDependencies",
-      "file_type": "code",
-      "norm_label": "tailwindcss",
-      "source_file": "frontend/package.json",
-      "source_location": "L25"
-    },
-    {
-      "id": "frontend_package_devdependencies_tailwindcss_vite",
-      "label": "@tailwindcss/vite",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "devDependencies",
-      "file_type": "code",
-      "norm_label": "@tailwindcss/vite",
-      "source_file": "frontend/package.json",
-      "source_location": "L19"
-    },
-    {
-      "id": "frontend_package_devdependencies_types_node",
-      "label": "@types/node",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "devDependencies",
-      "file_type": "code",
-      "norm_label": "@types/node",
-      "source_file": "frontend/package.json",
-      "source_location": "L20"
-    },
-    {
-      "id": "frontend_package_devdependencies_types_react",
-      "label": "@types/react",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "devDependencies",
-      "file_type": "code",
-      "norm_label": "@types/react",
-      "source_file": "frontend/package.json",
-      "source_location": "L21"
-    },
-    {
-      "id": "frontend_package_devdependencies_types_react_dom",
-      "label": "@types/react-dom",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "devDependencies",
-      "file_type": "code",
-      "norm_label": "@types/react-dom",
-      "source_file": "frontend/package.json",
-      "source_location": "L22"
-    },
-    {
-      "id": "frontend_package_devdependencies_typescript",
-      "label": "typescript",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "devDependencies",
-      "file_type": "code",
-      "norm_label": "typescript",
-      "source_file": "frontend/package.json",
-      "source_location": "L26"
-    },
-    {
-      "id": "frontend_package_devdependencies_vite",
-      "label": "vite",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "devDependencies",
-      "file_type": "code",
-      "norm_label": "vite",
-      "source_file": "frontend/package.json",
-      "source_location": "L27"
-    },
-    {
-      "id": "frontend_package_devdependencies_vitejs_plugin_react",
-      "label": "@vitejs/plugin-react",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "devDependencies",
-      "file_type": "code",
       "norm_label": "@vitejs/plugin-react",
       "source_file": "frontend/package.json",
       "source_location": "L23"
@@ -2187,6 +2187,17 @@
       "source_location": ""
     },
     {
+      "id": "get",
+      "label": "get",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "app.py",
+      "file_type": "code",
+      "norm_label": "get",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "post",
       "label": "post",
       "_origin": "ast",
@@ -2205,6 +2216,17 @@
       "community_name": "app.py",
       "file_type": "code",
       "norm_label": "put",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "request",
+      "label": "Request",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "app.py",
+      "file_type": "code",
+      "norm_label": "request",
       "source_file": "",
       "source_location": ""
     },
@@ -2229,17 +2251,6 @@
       "norm_label": "run related reads over one warehouse connection to avoid repeated setup.",
       "source_file": "api/app.py",
       "source_location": "L41"
-    },
-    {
-      "id": "request",
-      "label": "Request",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "ingest_hn.py",
-      "file_type": "code",
-      "norm_label": "request",
-      "source_file": "",
-      "source_location": ""
     },
     {
       "id": "scripts_ingest_hn",
@@ -2559,6 +2570,102 @@
       "norm_label": "include",
       "source_file": "frontend/tsconfig.app.json",
       "source_location": "L25"
+    },
+    {
+      "id": "implementation",
+      "label": "IMPLEMENTATION.md",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "CareerSync user and test guide",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "implementation.md",
+      "source_file": "IMPLEMENTATION.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "readme",
+      "label": "README.md",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "CareerSync user and test guide",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "readme.md",
+      "source_file": "README.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "readme_careersync",
+      "label": "CareerSync",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "CareerSync user and test guide",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "careersync",
+      "source_file": "README.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "readme_codebase_map",
+      "label": "Codebase map",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "CareerSync user and test guide",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "codebase map",
+      "source_file": "README.md",
+      "source_location": "L64"
+    },
+    {
+      "id": "readme_project_map",
+      "label": "Project map",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "CareerSync user and test guide",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "project map",
+      "source_file": "README.md",
+      "source_location": "L57"
+    },
+    {
+      "id": "readme_quick_start_for_students",
+      "label": "Quick start for students",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "CareerSync user and test guide",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "quick start for students",
+      "source_file": "README.md",
+      "source_location": "L7"
+    },
+    {
+      "id": "readme_run_locally",
+      "label": "Run locally",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "CareerSync user and test guide",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "run locally",
+      "source_file": "README.md",
+      "source_location": "L17"
+    },
+    {
+      "id": "user_guide",
+      "label": "USER_GUIDE.md",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "CareerSync user and test guide",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "user_guide.md",
+      "source_file": "USER_GUIDE.md",
+      "source_location": "L1"
     },
     {
       "id": "user_guide_automated_checks",
@@ -2892,23 +2999,11 @@
       "source_location": "L22"
     },
     {
-      "id": "implementation",
-      "label": "IMPLEMENTATION.md",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "Build Tech Career Explorer",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "implementation.md",
-      "source_file": "IMPLEMENTATION.md",
-      "source_location": "L1"
-    },
-    {
       "id": "implementation_1_outcome_and_architecture",
       "label": "1. Outcome and architecture",
       "_origin": "ast",
       "community": 9,
-      "community_name": "Build Tech Career Explorer",
+      "community_name": "CareerSync implementation",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "1. outcome and architecture",
@@ -2920,7 +3015,7 @@
       "label": "2. Interface and student experience",
       "_origin": "ast",
       "community": 9,
-      "community_name": "Build Tech Career Explorer",
+      "community_name": "CareerSync implementation",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "2. interface and student experience",
@@ -2932,7 +3027,7 @@
       "label": "3. Backend, evidence, and AI",
       "_origin": "ast",
       "community": 9,
-      "community_name": "Build Tech Career Explorer",
+      "community_name": "CareerSync implementation",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "3. backend, evidence, and ai",
@@ -2944,7 +3039,7 @@
       "label": "4. Deployment, GitHub, and project context",
       "_origin": "ast",
       "community": 9,
-      "community_name": "Build Tech Career Explorer",
+      "community_name": "CareerSync implementation",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "4. deployment, github, and project context",
@@ -2956,7 +3051,7 @@
       "label": "5. Verification and acceptance",
       "_origin": "ast",
       "community": 9,
-      "community_name": "Build Tech Career Explorer",
+      "community_name": "CareerSync implementation",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "5. verification and acceptance",
@@ -2968,7 +3063,7 @@
       "label": "API contracts",
       "_origin": "ast",
       "community": 9,
-      "community_name": "Build Tech Career Explorer",
+      "community_name": "CareerSync implementation",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "api contracts",
@@ -2976,14 +3071,14 @@
       "source_location": "L114"
     },
     {
-      "id": "implementation_build_tech_career_explorer",
-      "label": "Build Tech Career Explorer",
+      "id": "implementation_careersync_implementation",
+      "label": "CareerSync implementation",
       "_origin": "ast",
       "community": 9,
-      "community_name": "Build Tech Career Explorer",
+      "community_name": "CareerSync implementation",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "build tech career explorer",
+      "norm_label": "careersync implementation",
       "source_file": "IMPLEMENTATION.md",
       "source_location": "L1"
     },
@@ -2992,7 +3087,7 @@
       "label": "Data and metrics",
       "_origin": "ast",
       "community": 9,
-      "community_name": "Build Tech Career Explorer",
+      "community_name": "CareerSync implementation",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "data and metrics",
@@ -3004,7 +3099,7 @@
       "label": "Databricks deployment",
       "_origin": "ast",
       "community": 9,
-      "community_name": "Build Tech Career Explorer",
+      "community_name": "CareerSync implementation",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "databricks deployment",
@@ -3016,7 +3111,7 @@
       "label": "Educational guidance and chat",
       "_origin": "ast",
       "community": 9,
-      "community_name": "Build Tech Career Explorer",
+      "community_name": "CareerSync implementation",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "educational guidance and chat",
@@ -3028,7 +3123,7 @@
       "label": "GitHub collaboration",
       "_origin": "ast",
       "community": 9,
-      "community_name": "Build Tech Career Explorer",
+      "community_name": "CareerSync implementation",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "github collaboration",
@@ -3040,7 +3135,7 @@
       "label": "Graphify and compressed handoff",
       "_origin": "ast",
       "community": 9,
-      "community_name": "Build Tech Career Explorer",
+      "community_name": "CareerSync implementation",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "graphify and compressed handoff",
@@ -3052,7 +3147,7 @@
       "label": "Main views",
       "_origin": "ast",
       "community": 9,
-      "community_name": "Build Tech Career Explorer",
+      "community_name": "CareerSync implementation",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "main views",
@@ -3064,96 +3159,12 @@
       "label": "Visual direction: follow the supplied dashboard closely",
       "_origin": "ast",
       "community": 9,
-      "community_name": "Build Tech Career Explorer",
+      "community_name": "CareerSync implementation",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "visual direction: follow the supplied dashboard closely",
       "source_file": "IMPLEMENTATION.md",
       "source_location": "L28"
-    },
-    {
-      "id": "readme",
-      "label": "README.md",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "Build Tech Career Explorer",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "readme.md",
-      "source_file": "README.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "readme_careersync",
-      "label": "CareerSync",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "Build Tech Career Explorer",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "careersync",
-      "source_file": "README.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "readme_codebase_map",
-      "label": "Codebase map",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "Build Tech Career Explorer",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "codebase map",
-      "source_file": "README.md",
-      "source_location": "L64"
-    },
-    {
-      "id": "readme_project_map",
-      "label": "Project map",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "Build Tech Career Explorer",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "project map",
-      "source_file": "README.md",
-      "source_location": "L57"
-    },
-    {
-      "id": "readme_quick_start_for_students",
-      "label": "Quick start for students",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "Build Tech Career Explorer",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "quick start for students",
-      "source_file": "README.md",
-      "source_location": "L7"
-    },
-    {
-      "id": "readme_run_locally",
-      "label": "Run locally",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "Build Tech Career Explorer",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "run locally",
-      "source_file": "README.md",
-      "source_location": "L17"
-    },
-    {
-      "id": "user_guide",
-      "label": "USER_GUIDE.md",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "Build Tech Career Explorer",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "user_guide.md",
-      "source_file": "USER_GUIDE.md",
-      "source_location": "L1"
     }
   ],
   "links": [
@@ -3783,7 +3794,7 @@
     },
     {
       "source": "api_app_health",
-      "target": "scripts_ingest_hn_get",
+      "target": "get",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -3795,7 +3806,7 @@
     },
     {
       "source": "api_app_list_profiles",
-      "target": "scripts_ingest_hn_get",
+      "target": "get",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -3807,7 +3818,7 @@
     },
     {
       "source": "api_app_market",
-      "target": "scripts_ingest_hn_get",
+      "target": "get",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -3819,7 +3830,7 @@
     },
     {
       "source": "api_app_posts",
-      "target": "scripts_ingest_hn_get",
+      "target": "get",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -3867,7 +3878,7 @@
     },
     {
       "source": "api_app_whoami",
-      "target": "scripts_ingest_hn_get",
+      "target": "get",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5593,7 +5604,7 @@
     },
     {
       "source": "implementation",
-      "target": "implementation_build_tech_career_explorer",
+      "target": "implementation_careersync_implementation",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5691,7 +5702,7 @@
       "weight": 1.0
     },
     {
-      "source": "implementation_build_tech_career_explorer",
+      "source": "implementation_careersync_implementation",
       "target": "implementation_4_deployment_github_and_project_context",
       "relation": "contains",
       "_origin": "ast",
@@ -5702,7 +5713,7 @@
       "weight": 1.0
     },
     {
-      "source": "implementation_build_tech_career_explorer",
+      "source": "implementation_careersync_implementation",
       "target": "implementation_5_verification_and_acceptance",
       "relation": "contains",
       "_origin": "ast",
@@ -5713,7 +5724,7 @@
       "weight": 1.0
     },
     {
-      "source": "implementation_build_tech_career_explorer",
+      "source": "implementation_careersync_implementation",
       "target": "implementation_2_interface_and_student_experience",
       "relation": "contains",
       "_origin": "ast",
@@ -5724,7 +5735,7 @@
       "weight": 1.0
     },
     {
-      "source": "implementation_build_tech_career_explorer",
+      "source": "implementation_careersync_implementation",
       "target": "implementation_1_outcome_and_architecture",
       "relation": "contains",
       "_origin": "ast",
@@ -5735,7 +5746,7 @@
       "weight": 1.0
     },
     {
-      "source": "implementation_build_tech_career_explorer",
+      "source": "implementation_careersync_implementation",
       "target": "implementation_3_backend_evidence_and_ai",
       "relation": "contains",
       "_origin": "ast",
@@ -6993,5 +7004,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "cf9bbd8bdfc3358d7458c36bc2f6ebdad3754e36"
+  "built_at_commit": "ec27665f1058b5020ba23459df7788b4cf7ed4b3"
 }
