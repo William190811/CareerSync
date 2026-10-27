@@ -1,0 +1,13 @@
+command:
+  - python
+  - -m
+  - api.run
+env:
+  - name: DATABRICKS_WAREHOUSE_ID
+    valueFrom: sql-warehouse
+  - name: DATABRICKS_GENIE_SPACE_ID
+    valueFrom: genie-space
+  - name: HN_CATALOG
+    value: workspace
+  - name: HN_SCHEMA
+    value: tech_careers

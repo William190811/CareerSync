@@ -11,9 +11,13 @@
   - `C:/Users/there/.agents/skills/impeccable/SKILL.md`
   - `C:/Users/there/.agents/skills/ui-ux-pro-max/SKILL.md`
 - Preserve the approved professional market-dashboard experience, React/FastAPI
-  stack, and both light and dark themes. The student dashboard is an operational
+  stack, and dark-only theme. The student dashboard is an operational
   interface; the separate presentation website is a later deliverable.
 - Keep services within Databricks Free Edition. Do not upgrade or use paid services.
 - The user authorized comparing available models on the reviewed pilot and then
   processing the full archive with the best measured option. Keep processing
   resumable and respect Free Edition quotas; do not upgrade or use paid services.
+
+- Keep the Graphify handoff current when code or architecture documentation changes:
+  run `graphify . --update` and review `graphify-out/GRAPH_REPORT.md`. Each clone
+  must install its own post-commit hook with `graphify hook install`.

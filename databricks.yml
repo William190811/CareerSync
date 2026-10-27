@@ -1,0 +1,75 @@
+bundle:
+  name: tech-career-explorer
+
+variables:
+  app_name:
+    description: Databricks app name, up to 30 lowercase letters, numbers, and hyphens
+    default: techcareers-${workspace.current_user.domain_friendly_name}
+  warehouse_id:
+    description: Free Edition SQL warehouse ID used by the dashboard
+  genie_space_id:
+    description: Genie space ID used by the market chat
+
+sync:
+  paths:
+    - .databricks_app
+  include:
+    - .databricks_app/**
+  exclude:
+    - .databricks_app/**/__pycache__/**
+
+resources:
+  apps:
+    tech_career_explorer:
+      name: ${var.app_name}
+      description: Tech career hiring market dashboard and major explorer
+      source_code_path: ./.databricks_app
+      resources:
+        - name: sql-warehouse
+          sql_warehouse:
+            id: ${var.warehouse_id}
+            permission: CAN_USE
+        - name: genie-space
+          genie_space:
+            name: Tech Career Market Explorer
+            space_id: ${var.genie_space_id}
+            permission: CAN_RUN
+        - name: job-posts
+          uc_securable:
+            securable_type: TABLE
+            securable_full_name: workspace.tech_careers.hn_job_posts
+            permission: SELECT
+        - name: extraction-inputs
+          uc_securable:
+            securable_type: TABLE
+            securable_full_name: workspace.tech_careers.hn_extraction_inputs
+            permission: SELECT
+        - name: extraction-results
+          uc_securable:
+            securable_type: TABLE
+            securable_full_name: workspace.tech_careers.hn_extraction_validated
+            permission: SELECT
+        - name: demo-profiles-read
+          uc_securable:
+            securable_type: TABLE
+            securable_full_name: workspace.tech_careers.student_demo_profiles
+            permission: SELECT
+        - name: demo-profiles-write
+          uc_securable:
+            securable_type: TABLE
+            securable_full_name: workspace.tech_careers.student_demo_profiles
+            permission: MODIFY
+
+targets:
+  dev:
+    default: true
+    mode: development
+    workspace:
+      profile: tech-career
+  prod:
+    mode: production
+    workspace:
+      profile: tech-career
+      root_path: /Workspace/Users/${workspace.current_user.userName}/.bundle/${bundle.name}/${bundle.target}
+    variables:
+      app_name: tech-career-explorer

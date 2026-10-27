@@ -1,0 +1,12 @@
+# Local screenshots and browser traces are review artifacts, not project architecture.
+.impeccable/
+.playwright-mcp/
+
+# Avoid indexing build output and copied deployment bundles.
+frontend/dist/
+frontend/node_modules/
+.databricks_app/
+graphify-out/
+
+# Assignment brief is not application architecture documentation.
+*Mockup Software Design.pdf

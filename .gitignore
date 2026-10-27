@@ -6,4 +6,12 @@ __pycache__/
 .venv/
 node_modules/
 dist/
+.databricks_app/
 .pytest_cache/
+.impeccable/
+.playwright-mcp/
+/\[Project\] Mockup Software Design.pdf
+graphify-out/.*
+graphify-out/cache/
+graphify-out/[0-9]*/
+graphify-out/cost.json
