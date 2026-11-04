@@ -39,6 +39,9 @@ a { color: inherit; }
 :focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; }
 
 .dashboard-shell { width: min(100%, 1720px); margin: 0 auto; padding: 20px 24px 28px; }
+.render-error { position: fixed; z-index: 100; inset: 0; display: grid; align-content: center; justify-items: center; gap: 14px; padding: 24px; background: var(--bg); color: var(--text); text-align: center; }
+.render-error p, .render-error details { max-width: 60ch; color: var(--muted); }
+.render-error code { overflow-wrap: anywhere; }
 .skip-link { position: fixed; z-index: 20; top: -60px; left: 16px; padding: 10px 14px; border: 1px solid var(--border); border-radius: 10px; background: var(--tile); }
 .skip-link:focus { top: 10px; }
 .topbar { min-height: 50px; display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 15px; }
