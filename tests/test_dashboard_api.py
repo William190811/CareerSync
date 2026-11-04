@@ -195,6 +195,14 @@ class DashboardApiTests(unittest.TestCase):
         self.assertIn("LIMIT 100 OFFSET 0", sql)
         self.assertEqual(sql.count("?"), len(params))
 
+    def test_posts_serializes_unexpected_connector_values(self):
+        self.query.return_value = [{"item_id": 123, "skills": object(), "salary": "[]",
+                                    "seniority": "[]", "country": '["Canada"]',
+                                    "validation_issues": "[]"}]
+        response = self.client.get("/api/posts")
+        self.assertEqual(response.status_code, 200)
+        self.assertIsInstance(response.json()[0]["skills"], str)
+
     def test_profiles_list_save_validation_and_delete(self):
         self.query.return_value = []
         self.assertEqual(self.client.get("/api/profiles").json(), [])

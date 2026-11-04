@@ -186,9 +186,10 @@ def posts(career: str | None = None, country: str | None = None, remote: str | N
         rows = query(f"""SELECT item_id, month, source_url, text_plain, skills, salary, seniority,
           country, remote_policy, extraction_status, validation_issues FROM {POSTS}
           WHERE {where} ORDER BY created_at_unix DESC LIMIT {max(1, min(limit, 100))} OFFSET {max(0, offset)}""", params)
-        return [{**r, "skills": as_json(r["skills"]), "salary": as_json(r["salary"]),
-                 "seniority": as_json(r["seniority"]), "country": as_json(r["country"]),
-                 "validation_issues": as_json(r["validation_issues"])} for r in rows]
+        result = [{**r, "skills": as_json(r["skills"]), "salary": as_json(r["salary"]),
+                   "seniority": as_json(r["seniority"]), "country": as_json(r["country"]),
+                   "validation_issues": as_json(r["validation_issues"])} for r in rows]
+        return json.loads(json.dumps(result, default=str))
     except Exception as exc:
         raise HTTPException(503, service_error("Job posts are not ready", exc)) from exc
 
