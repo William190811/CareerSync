@@ -54,12 +54,22 @@ def query_batch(statements):
 def as_json(value):
     if value is None:
         return None
-    if not isinstance(value, str):
-        return value
-    try:
-        return json.loads(value)
-    except json.JSONDecodeError:
-        return json.loads(value, strict=False)
+    if isinstance(value, str):
+        try:
+            return json.loads(value)
+        except json.JSONDecodeError:
+            try:
+                return json.loads(value, strict=False)
+            except json.JSONDecodeError:
+                return value
+    as_dict = getattr(value, "asDict", None)
+    if callable(as_dict):
+        return {key: as_json(item) for key, item in as_dict().items()}
+    if isinstance(value, dict):
+        return {key: as_json(item) for key, item in value.items()}
+    if isinstance(value, (list, tuple)):
+        return [as_json(item) for item in value]
+    return value
 
 
 def service_error(context, exc):

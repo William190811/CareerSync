@@ -13,6 +13,15 @@ class FilterSqlTests(unittest.TestCase):
         parsed = dashboard.as_json('[{"raw_text":"S\nenior Web Security Engineer"}]')
         self.assertEqual(parsed, [{"raw_text": "S\nenior Web Security Engineer"}])
 
+    def test_as_json_converts_nested_sql_connector_rows(self):
+        class SqlRow:
+            def asDict(self):
+                return {"currency": "USD", "range": (120000, 160000)}
+
+        self.assertEqual(dashboard.as_json([SqlRow()]), [
+            {"currency": "USD", "range": [120000, 160000]},
+        ])
+
     def test_query_batch_reuses_one_connection(self):
         cursor = unittest.mock.MagicMock()
         cursor.__enter__.return_value = cursor
