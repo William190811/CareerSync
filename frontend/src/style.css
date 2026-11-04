@@ -85,6 +85,7 @@ a { color: inherit; }
 .tile--skills { --muted: rgba(255,255,255,.84); --quiet: rgba(255,255,255,.67); --grid: rgba(255,255,255,.2); grid-column: 1 / span 6; grid-row: 4; border-color: rgba(255,255,255,.16); background: radial-gradient(ellipse 90% 46% at 55% 112%,#061d15 0%,transparent 76%),linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),linear-gradient(180deg,#a6e8c8 0%,#36956f 36%,#36956f 74%,#58b58c 100%); }
 .tile--activity { grid-column: 7 / span 6; grid-row: 4; }
 .market-metric { display: grid; align-content: space-between; gap: 8px; min-width: 0; padding: 20px 22px; overflow: hidden; border: 1px solid var(--glass-border); border-radius: 28px; background: radial-gradient(ellipse 92% 74% at 100% 0%,var(--metric-glow),transparent 72%),radial-gradient(ellipse 90% 65% at 50% 112%,color-mix(in srgb,var(--metric-glow) 70%,transparent),transparent 78%),var(--glass-fill); box-shadow: var(--glass-shadow); color: var(--text); backdrop-filter: blur(18px); }
+.bento-tile, .market-metric { backdrop-filter: none; }
 .market-metric>span { font-size: 15px; font-weight: 600; }
 .market-metric strong { overflow: hidden; font: 600 clamp(27px,3vw,39px)/1 var(--mono); letter-spacing: -.055em; text-overflow: ellipsis; white-space: nowrap; }
 .market-metric small { color: rgba(255,255,255,.76); font-size: 14px; line-height: 1.4; }

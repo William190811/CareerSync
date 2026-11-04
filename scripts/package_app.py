@@ -10,7 +10,7 @@ subprocess.run(["npm.cmd" if __import__("os").name == "nt" else "npm", "run", "b
                cwd=ROOT / "frontend", check=True)
 if OUT.exists():
     shutil.rmtree(OUT)
-shutil.copytree(ROOT / "api", OUT / "api", ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
+shutil.copytree(ROOT / "api", OUT / "api", ignore=shutil.ignore_patterns("__pycache__", "*.pyc", "static"))
 shutil.copytree(ROOT / "frontend" / "dist", OUT / "api" / "static")
 shutil.copy2(ROOT / "app.yaml", OUT / "app.yaml")
 shutil.copy2(ROOT / "requirements.txt", OUT / "requirements.txt")
