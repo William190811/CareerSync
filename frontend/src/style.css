@@ -115,7 +115,7 @@ a { color: inherit; }
 .month-bars span:nth-child(5n+2), .month-bars span:nth-child(5n+3) { background: var(--lilac); }
 .month-caption { position: absolute; right: 30px; bottom: 43px; left: 30px; display: flex; justify-content: space-between; gap: 8px; color: var(--quiet); font-size: 15px; }
 .month-caption b { color: var(--text); font: 14px var(--mono); }
-.lead-foot { position: absolute; right: 30px; bottom: 19px; left: 30px; display: flex; justify-content: space-between; gap: 10px; padding-top: 10px; border-top: 1px solid var(--border); color: var(--muted); font-size: 15px; }
+.lead-foot { position: absolute; right: 30px; bottom: 19px; left: 30px; display: flex; justify-content: space-between; gap: 10px; padding-top: 10px; color: var(--muted); font-size: 15px; }
 .lead-foot span:last-child { color: var(--quiet); }
 .lead-foot i { display: inline-block; width: 3px; height: 3px; margin: 0 4px; border-radius: 50%; background: var(--quiet); vertical-align: middle; }
 
@@ -264,6 +264,7 @@ a { color: inherit; }
 .delete-profile { display: inline-flex; min-height: 40px; align-items: center; justify-content: center; gap: 6px; padding: 0 10px; border: 1px solid rgba(255,255,255,.12); border-radius: 10px; background: linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025)); color: #e7a3a3; font-size: 15px; backdrop-filter: blur(14px); cursor: pointer; }
 .save-button:hover { filter: brightness(1.04); }
 .profile-disclaimer, .chat-footnote { display: block; margin-top: 10px; color: var(--quiet); font-size: 14px; line-height: 1.5; }
+.profile-save-error { margin: 10px 0 0; color: #cf8989; font-size: 14px; line-height: 1.5; }
 .ai-chip { display: inline-flex; align-items: center; gap: 5px; }
 .chat-identity { display: grid; gap: 4px; margin: -3px 0 10px; color: var(--muted); font-size: 14px; }
 .generated-sql { margin-top: 9px; border: 1px solid rgba(255,255,255,.12); border-radius: 9px; background: radial-gradient(ellipse 100% 150% at 100% 0%,rgba(166,232,200,.12),transparent 75%),linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025)); color: var(--muted); font-size: 15px; backdrop-filter: blur(14px); }

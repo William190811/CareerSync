@@ -195,13 +195,13 @@ class DashboardApiTests(unittest.TestCase):
         self.assertIn("LIMIT 100 OFFSET 0", sql)
         self.assertEqual(sql.count("?"), len(params))
 
-    def test_posts_serializes_unexpected_connector_values(self):
+    def test_posts_returns_empty_skills_for_unexpected_connector_values(self):
         self.query.return_value = [{"item_id": 123, "skills": object(), "salary": "[]",
                                     "seniority": "[]", "country": '["Canada"]',
                                     "validation_issues": "[]"}]
         response = self.client.get("/api/posts")
         self.assertEqual(response.status_code, 200)
-        self.assertIsInstance(response.json()[0]["skills"], str)
+        self.assertEqual(response.json()[0]["skills"], [])
 
     def test_profiles_list_save_validation_and_delete(self):
         self.query.return_value = []
@@ -222,12 +222,18 @@ class DashboardApiTests(unittest.TestCase):
         self.assertEqual(deleted.json(), {"deleted": "Data path"})
 
     def test_profile_list_decodes_json_arrays_and_defaults_null_fields(self):
+        class SqlArray:
+            def tolist(self):
+                return ["Computer science", "Data science"]
+
         self.query.return_value = [
             {"name": "Saved path", "interests": '["AI / ML engineer"]',
              "subjects": '["Computer science"]', "career": "AI / ML engineer",
              "majors": '["Computer science"]'},
             {"name": "Empty path", "interests": None, "subjects": None,
              "career": None, "majors": None},
+            {"name": "Array path", "interests": SqlArray(), "subjects": SqlArray(),
+             "career": "Data scientist", "majors": SqlArray()},
         ]
         response = self.client.get("/api/profiles")
         self.assertEqual(response.status_code, 200)
@@ -238,6 +244,9 @@ class DashboardApiTests(unittest.TestCase):
         self.assertEqual(response.json()[1]["subjects"], [])
         self.assertEqual(response.json()[1]["majors"], [])
         self.assertEqual(response.json()[1]["career"], "")
+        self.assertEqual(response.json()[2]["interests"], ["Computer science", "Data science"])
+        self.assertEqual(response.json()[2]["subjects"], ["Computer science", "Data science"])
+        self.assertEqual(response.json()[2]["majors"], ["Computer science", "Data science"])
 
     def test_chat_starts_and_continues_genie_conversations_and_returns_results(self):
         columns = [SimpleNamespace(name="skill")]

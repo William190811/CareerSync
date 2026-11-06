@@ -98,6 +98,9 @@ export default function App() {
   const [profilesError, setProfilesError] = useState('')
   const [profileName, setProfileName] = useState('')
   const [profileForm, setProfileForm] = useState('')
+  const [profileSaving, setProfileSaving] = useState(false)
+  const [profileMessage, setProfileMessage] = useState('')
+  const [profileMessageError, setProfileMessageError] = useState(false)
   const [compare, setCompare] = useState<string[]>([])
   const [frontMajor, setFrontMajor] = useState('')
   const [question, setQuestion] = useState('')
@@ -172,6 +175,7 @@ export default function App() {
     const profile = profiles.find(value => value.name === name) || starterProfiles.find(value => value.name === name)
     const nextCareer = profile?.career || ''
     setProfileName(name)
+    setProfileMessage('')
     if (nextCareer !== career) setLoading(true)
     setError(''); setSourceError('')
     setCareer(nextCareer)
@@ -180,23 +184,32 @@ export default function App() {
     setFrontMajor(profile?.majors?.at(-1) || '')
   }
   async function saveProfile() {
-    const name = profileForm.trim() || (profiles.some(profile => profile.name === profileName) ? profileName.trim() : '')
-    if (!name) { setError('Add a name for this demo profile first.'); return }
+    const name = profileForm.trim() || (profiles.some(profile => profile.name.toLowerCase() === profileName.toLowerCase()) ? profileName.trim() : '')
+    if (!name) { setProfileMessage('Add a name for this demo profile first.'); setProfileMessageError(true); return }
+    setProfileSaving(true); setProfileMessage(''); setProfileMessageError(false)
     const snapshot = { name, interests: career ? [career] : [], subjects: compare, career, majors: compare }
     try {
-      await fetch('/api/profiles', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(snapshot) }).then(readApiResponse<Profile>)
-      const saved = await fetch('/api/profiles').then(readApiResponse<Profile[]>)
-      setProfiles(saved); setProfilesError(''); setProfileName(name); setProfileForm(''); setError('')
-    } catch (reason) { setError(requestError(reason, 'Could not save this profile.')) }
+      const saved = await fetch('/api/profiles', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(snapshot) }).then(readApiResponse<Profile>)
+      setProfiles(current => [...current.filter(profile => profile.name.toLowerCase() !== saved.name.toLowerCase()), saved].sort((a, b) => a.name.localeCompare(b.name)))
+      setProfilesError(''); setProfileName(saved.name); setProfileForm(''); setError('')
+      setProfileMessage(`${saved.name} is saved and shared with the class.`)
+    } catch (reason) {
+      const message = requestError(reason, 'Could not save this profile.')
+      setProfileMessage(message); setProfileMessageError(true)
+    } finally { setProfileSaving(false) }
   }
   async function removeProfile() {
     if (!profileName || !window.confirm(`Delete the shared demo profile "${profileName}"?`)) return
     try {
-      await fetch(`/api/profiles/${encodeURIComponent(profileName)}`, { method: 'DELETE' }).then(readApiResponse<{ deleted: string }>)
-      setProfiles(await fetch('/api/profiles').then(readApiResponse<Profile[]>))
+      const deleted = await fetch(`/api/profiles/${encodeURIComponent(profileName)}`, { method: 'DELETE' }).then(readApiResponse<{ deleted: string }>)
+      setProfiles(current => current.filter(profile => profile.name.toLowerCase() !== deleted.deleted.toLowerCase()))
       if (career) setLoading(true)
       setProfileName(''); setCareer(''); setCompare([]); setFrontMajor(''); setError('')
-    } catch (reason) { setError(requestError(reason, 'Could not delete this profile.')) }
+      setProfileMessage(`${deleted.deleted} was removed.`); setProfileMessageError(false)
+    } catch (reason) {
+      const message = requestError(reason, 'Could not delete this profile.')
+      setProfileMessage(message); setProfileMessageError(true)
+    }
   }
   async function ask() {
     if (!question.trim()) return
@@ -309,8 +322,9 @@ export default function App() {
 
         <Tile className="lower-tile profile-save" title="Save this direction" action={<span className="profile-label">SHARED DEMO</span>}>
           <p className="lower-intro">Save your selected career and major shortlist as a named demo profile for the class.</p>
-          <label className="profile-label-input">PROFILE NAME<input value={profileForm} onChange={event=>setProfileForm(event.target.value)} placeholder={profileName || 'e.g. Data and design'} maxLength={48}/></label>
-          <div className="profile-actions"><button className="save-button" onClick={saveProfile}>Save demo profile <ChevronRight size={14}/></button>{profiles.some(profile => profile.name === profileName) && <button className="delete-profile" onClick={removeProfile}><Trash2 size={14}/> Delete shared profile</button>}</div>
+          <label className="profile-label-input">PROFILE NAME<input value={profileForm} onChange={event=>{setProfileForm(event.target.value);setProfileMessage('')}} placeholder={profiles.some(profile => profile.name.toLowerCase() === profileName.toLowerCase()) ? profileName : 'e.g. Data and design'} maxLength={48}/></label>
+          <div className="profile-actions"><button className="save-button" onClick={saveProfile} disabled={profileSaving}>{profileSaving ? 'Saving profile…' : 'Save demo profile'} {!profileSaving && <ChevronRight size={14}/>}</button>{profiles.some(profile => profile.name.toLowerCase() === profileName.toLowerCase()) && <button className="delete-profile" onClick={removeProfile}><Trash2 size={14}/> Delete shared profile</button>}</div>
+          {profileMessage && <p className={profileMessageError ? 'profile-save-error' : 'profile-disclaimer'} role={profileMessageError ? 'alert' : 'status'}>{profileMessage}</p>}
           <small className="profile-disclaimer">Profiles are shared classroom examples, not private student accounts.</small>
         </Tile>
 

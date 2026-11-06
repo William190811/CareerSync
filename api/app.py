@@ -72,6 +72,14 @@ def as_json(value):
     return value
 
 
+def as_array(value):
+    decoded = as_json(value)
+    tolist = getattr(decoded, "tolist", None)
+    if callable(tolist):
+        decoded = tolist()
+    return decoded if isinstance(decoded, list) else []
+
+
 def service_error(context, exc):
     error = str(exc).lower()
     if any(marker in error for marker in ("free daily limit", "deny_new_and_existing_resources", "resource limit", "quota exceeded")):
@@ -186,7 +194,7 @@ def posts(career: str | None = None, country: str | None = None, remote: str | N
         rows = query(f"""SELECT item_id, month, source_url, text_plain, skills, salary, seniority,
           country, remote_policy, extraction_status, validation_issues FROM {POSTS}
           WHERE {where} ORDER BY created_at_unix DESC LIMIT {max(1, min(limit, 100))} OFFSET {max(0, offset)}""", params)
-        result = [{**r, "skills": as_json(r["skills"]), "salary": as_json(r["salary"]),
+        result = [{**r, "skills": as_array(r["skills"]), "salary": as_json(r["salary"]),
                    "seniority": as_json(r["seniority"]), "country": as_json(r["country"]),
                    "validation_issues": as_json(r["validation_issues"])} for r in rows]
         return json.loads(json.dumps(result, default=str))
@@ -211,9 +219,9 @@ class Profile(BaseModel):
 def list_profiles():
     try:
         rows = query(f"SELECT name, interests, subjects, career, majors FROM {PROFILES} ORDER BY name")
-        return [{**row, "interests": as_json(row["interests"]) or [],
-                 "subjects": as_json(row["subjects"]) or [], "career": row["career"] or "",
-                 "majors": as_json(row["majors"]) or []} for row in rows]
+        return [{**row, "interests": as_array(row["interests"]),
+                 "subjects": as_array(row["subjects"]), "career": row["career"] or "",
+                 "majors": as_array(row["majors"])} for row in rows]
     except Exception as exc:
         raise HTTPException(503, service_error("Demo profiles are not available", exc)) from exc
 
